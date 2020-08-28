@@ -68,14 +68,8 @@ master:
     apiVersion: "extensions/v1beta1"
     labels: {}
     annotations:
-      kubernetes.io/tls-acme: "true" 
-      kubernetes.io/ssl-redirect: "true" 
       kubernetes.io/ingress.class: "nginx" 
     hostName: jcasc.ddns.net
-    tls:
-      - secretName: acme-jenkins-app-tls
-        hosts:
-          - jcasc.ddns.net
 
 
 persistence:
