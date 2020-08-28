@@ -69,7 +69,7 @@ master:
     labels: {}
     annotations:
       kubernetes.io/ingress.class: "nginx" 
-    hostName: jcasc.ddns.net
+    hostName: jenkins.myftp.org
 
 
 persistence:
