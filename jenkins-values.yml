@@ -73,7 +73,7 @@ master:
       kubernetes.io/ingress.class: "nginx" 
     hostName: jenkins.myftp.org
     tls:
-      - secretName: acme-jenkins-app-tls
+      - secretName: acme-jenkins-tls
         hosts:
           - jenkins.myftp.org
 
