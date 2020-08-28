@@ -1,7 +1,7 @@
 # JCasC
 Jenkins LTS Configuration as Code
 
-## Jenkins installation
+#### Jenkins installation
 * https://hub.helm.sh/charts/stable/jenkins
 * helm install stable/jenkins --version 2.5.2
 
