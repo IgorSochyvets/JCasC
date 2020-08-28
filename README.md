@@ -11,7 +11,8 @@ k apply -f pv_jenkins.yaml -n jenkins
 helm repo add stable https://kubernetes-charts.storage.googleapis.com/ 
 ```
 
-TMP command  (no persistece / later add     --set-string persistence.size=8Gi \ )
+Jenkins Deploymant:
+
 ```
 helm upgrade -i jenkins-stg \
   stable/jenkins \
@@ -38,6 +39,7 @@ helm upgrade -i jenkins-stg \
 * reader
 
 #### Credentials
+see `jenkins-values.yml` file, section JCasC
 
 #### Jobs 
 
