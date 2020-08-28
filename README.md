@@ -17,7 +17,8 @@ helm upgrade -i jenkins-stg \
   stable/jenkins \
   --version 2.5.2 \
   --set-string master.adminPassword=Password123$ \
-  --set persistence.enabled=false  \
+  --set persistence.enabled=true  \
+  --set-string persistence.size=8Gi \
   -f ./jenkins-values.yml \
   --debug \
   --wait  \
