@@ -8,7 +8,7 @@ Jenkins LTS Configuration as Code
 ```
 k create ns jenkins
 k apply -f pv_jenkins.yaml -n jenkins
-helm repo add stable https://kubernetes-charts.storage.googleapis.com/ 
+helm repo add jenkinsci https://charts.jenkins.io/
 ```
 
 Jenkins Deployment:
