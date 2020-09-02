@@ -111,3 +111,7 @@ persistence:
     - name: jenkins-secrets
       mountPath: /secrets/jenkins
       readOnly: true
+
+rbac:
+  create: false
+  readSecrets: false
