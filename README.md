@@ -2,8 +2,8 @@
 Jenkins LTS Configuration as Code
 
 #### Jenkins installation
-* https://hub.helm.sh/charts/stable/jenkins
-* helm install stable/jenkins --version 2.5.2
+* https://hub.helm.sh/charts/jenkinsci/jenkins
+* helm jenkinsci/jenkins --version 2.6.1
 
 ```
 k create ns jenkins
@@ -14,7 +14,7 @@ helm repo add stable https://kubernetes-charts.storage.googleapis.com/
 Jenkins Deployment:
 * without persistence:
 ```
-export HELM_UPGRADE="helm upgrade -i jenkins-stg stable/jenkins --version 2.5.2 --set-string master.adminPassword=Password123$ --set persistence.enabled=false    -f ./jenkins-values.yml --debug --wait -n jenkins"
+export HELM_UPGRADE="helm upgrade -i jenkins-stg jenkinsci/jenkins --version 2.6.1 --set-string master.adminPassword=Password123$ --set persistence.enabled=false    -f ./jenkins-values.yml --debug --wait -n jenkins"
 
 $HELM_UPGRADE
 
