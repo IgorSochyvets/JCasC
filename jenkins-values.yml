@@ -15,6 +15,11 @@ master:
   adminUser: "admin"
   # adminPassword: <defaults to random>
 
+# secrets for Credentials configuration using JCasC
+  containerEnv:
+    - name: SECRETS
+      value: /secrets/jenkins
+
   # List of plugins to be install during Jenkins master start
   installPlugins:
     - kubernetes:1.25.7
@@ -29,6 +34,7 @@ master:
     - slack:2.40
     - greenballs:1.15
     - thinBackup:1.9
+    - github-pullrequest:0.2.8
 
   # Jenkins XML job configs to provision
   jobs: {}
@@ -79,4 +85,11 @@ master:
 
 persistence:
   enabled: true
-
+  volumes:
+    - name: jenkins-secrets
+      secret:
+        secretName: jenkins-secrets
+  mounts:
+    - name: jenkins-secrets
+      mountPath: /secrets/jenkins
+      readOnly: true
