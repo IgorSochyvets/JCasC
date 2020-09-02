@@ -112,6 +112,3 @@ persistence:
       mountPath: /secrets/jenkins
       readOnly: true
 
-rbac:
-  create: false
-  readSecrets: false
