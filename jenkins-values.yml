@@ -60,13 +60,31 @@ master:
             system:
               domainCredentials:
               - credentials:
-                # Credential to use with Rest API operations and Nexus Jenkins plugin
-                - usernamePassword:
-                    description: "Just test credential"
-                    id: "test-credentials"
-                    password: "admin123"
+                - basicSSHUserPrivateKey:
                     scope: GLOBAL
-                    username: "admin"
+                    id: "github_ssh_private_key"
+                    username: "ssh_key_for_github"
+                    description: "github_ssh_private_key"
+                    privateKeySource:
+                      directEntry:
+                        privateKey: "${github_ssh_private_key}"
+                - file:
+                    scope: GLOBAL
+                    id: "kubeconfig"
+                    fileName: "kubeconfig_dev.yaml"
+                    secretBytes: "${base64:${readFile:${kubeconfig_dev_secret_file_path}}}" # secretBytes requires base64 encoded content # not finished yet!
+                - string:
+                    scope: GLOBAL
+                    id: "SlackToken"
+                    secret: "${slack_token}"
+                    description: "SlackToken"
+                - usernamePassword:
+                    scope: GLOBAL
+                    id: "mongo_credentials_dev"
+                    username: "user1"
+                    description: "mongodb credentials for dev k8s cluster"
+                    password: "${mongo_credentials_dev}"
+
 
   ingress:
     enabled: true
