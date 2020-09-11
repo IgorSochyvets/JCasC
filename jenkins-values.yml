@@ -97,7 +97,6 @@ master:
                   git {
                     remote {
                       url ('git@github.com:IgorSochyvets/JCasC.git')
-                      #credentials('github_ssh_private_key')
                     }
                   }
                 }
