@@ -40,6 +40,12 @@ helm upgrade -i jenkins-stg \
 
 #### Additional plugins Installation
 * rewrite plugins on Jenkins start and erase plugins installed using UI
+edit jenkins-values.yaml:
+```
+master:
+  additionalPlugins:
+
+```
 
 #### Configuring RBAC
 * admin
@@ -66,3 +72,11 @@ $HELM_UPGRADE
 #### Jobs 
 Meetup materials: https://www.youtube.com/watch?v=KB7thPsG9VA&ab_channel=Jenkins
 
+edit jenkins-values.yaml:
+```
+  JCasC:
+    jobs: |
+
+```
+
+#### Backup `jenkins_home` to s3 bucket
