@@ -35,6 +35,10 @@ master:
     - greenballs:1.15
     - thinBackup:1.9
     - github-pullrequest:0.2.8
+    - job-dsl:1.77
+    - rebuild:1.31
+    - timestamper:1.11.5
+    - xml-job-to-job-dsl:0.1.13
 
   # Jenkins XML job configs to provision
   jobs: {}
