@@ -64,4 +64,5 @@ $HELM_UPGRADE
 ```
 
 #### Jobs 
+Meetup materials: https://www.youtube.com/watch?v=KB7thPsG9VA&ab_channel=Jenkins
 
